@@ -1,0 +1,11 @@
+page.10.dataProcessing {
+    ## Main Menu
+    10 = menu
+    10 {
+        as = mainMenu
+        expandAll = 1
+        levels = 2
+        #Ist quasi falls nav_title leer ist gehe zu title
+        titleField = nav_title // title
+    }
+}

@@ -1,0 +1,54 @@
+mod.web_layout.BackendLayouts {
+  layoutwithHeader {
+    title = Layout mit Header
+    #icon = content-container-columns-2
+    config {
+      backend_layout {
+        colCount = 1
+        rowCount = 2
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Header
+                colPos = 1
+              }
+            }
+          }
+          2 {
+            columns {
+              1 {
+                name = Content
+                colPos = 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+mod.web_layout.BackendLayouts {
+  layoutwithoutHeader {
+    title = Layout ohne Header
+    #icon = content-container-columns-2
+    config {
+      backend_layout {
+        colCount = 1
+        rowCount = 2
+        rows {
+          1 {
+            columns {
+              1 {
+                name = Content
+                colPos = 0
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

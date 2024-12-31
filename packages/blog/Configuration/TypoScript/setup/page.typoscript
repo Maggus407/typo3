@@ -1,0 +1,48 @@
+page = PAGE
+
+page.meta {
+    viewport = width=device-width, initial-scale=1, shrink-to-fit=no
+}
+
+page.shortcutIcon = EXT:blog/Resources/Public/Icons/favicon.ico
+
+page.includeCSS {
+    bootstrap-icons = EXT:blog/Resources/Public/CSS/bootstrap-icons.css
+    styles = EXT:blog/Resources/Public/CSS/styles.css
+    custom = EXT:blog/Resources/Public/CSS/custom.css
+}
+
+page.includeJSFooter {
+    bootstrap = EXT:blog/Resources/Public/JS/bootstrap.bundle.min.js
+    scripts = EXT:blog/Resources/Public/JS/scripts.js
+}
+
+page.10 = FLUIDTEMPLATE
+page.10 {
+    layoutRootPath = EXT:blog/Resources/Private/Layouts/
+    partialRootPath = EXT:blog/Resources/Private/Partials/
+    #file = EXT:blog/Resources/Private/Templates/Default.html
+
+    file.stdWrap.cObject = CASE
+    file.stdWrap.cObject {
+        key.data = pagelayout
+
+        #Pafd zu einer ts
+        pagets__layoutwithHeader = TEXT
+        pagets__layoutwithHeader.value = EXT:blog/Resources/Private/Templates/Default.html
+
+        pagets__layoutwithoutHeader = TEXT
+        pagets__layoutwithoutHeader.value = EXT:blog/Resources/Private/Templates/WithoutHeader.html
+
+        default < .pagets__layoutwithHeader
+    }
+
+    variables {
+        content0 < styles.content.get
+
+        content1 < styles.content.get
+        content1 {
+            select.where = {#colPos} = 1
+        }
+    }
+}
